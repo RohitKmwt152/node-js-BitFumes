@@ -6,8 +6,9 @@ const authRouter = require("./auth");
 const router = express.Router();
 
 const path = require('path');
+const test = require("../middleware/auth");
 
-router.get('/', (req, res) => {
+router.get('/', test,(req, res) => {
     res.render('index',{name:`Rotuer ${res.app._router}`});
 });
 
